@@ -61,7 +61,7 @@ class NLTK_Helper:
 		while (count < len(tokens_as_dic)):
 			list_of_word.append(tokens_as_dic[count])
 			count+=1
-		return " ".join(list_of_word).replace(" .",".").replace(" !","!").replace(" ,", ",").replace(" \"", "\"").replace(" ;", ";").replace("`` ", '"').replace("'' ",'"')
+		return " ".join(list_of_word).replace(" .",".").replace(" !","!").replace(" ?","?").replace(" ,", ",").replace(" \"", "\"").replace(" ;", ";").replace("`` ", '"').replace("'' ",'"').replace(" ''", '"').replace(" 'll", "'ll").replace(" 're", "'re").replace(" n't", "n't").replace(" 's", "'s")
 
 
 

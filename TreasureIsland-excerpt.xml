@@ -6,31 +6,29 @@
         <title type="main">Treasure Island [Electronic resource] / Robert Louis Stevenson</title>
         <author>Stevenson, Robert Louis, 1850-1894</author>
       </titleStmt>
-        <publicationStmt>
-            <distributor>
-               <name>University of Oxford Text Archive</name>
-               <address>
+      <publicationStmt>
+        <distributor>
+          <name>University of Oxford Text Archive</name>
+          <address>
                   <addrLine>Oxford University Computing Services</addrLine>
                   <addrLine>13 Banbury Road</addrLine>
                   <addrLine>Oxford</addrLine>
                   <addrLine>OX2 6NN</addrLine>
                </address>
-               <email>ota@oucs.ox.ac.uk</email>
-            </distributor>
-            <idno type="ota">http://ota.ox.ac.uk/id/5730</idno>
-	<availability status="restricted">
-      <licence target="http://creativecommons.org/licenses/by-sa/3.0/">
-	Distributed by the University of Oxford under a Creative Commons
-	Attribution-ShareAlike 3.0 Unported License
-      </licence>
-            </availability>
-         </publicationStmt>
-	 <sourceDesc>
-	<p>This text is a TEI version of a Project Gutenberg text originally located at
-	<ptr target="http://www.gutenberg.org/dirs/1/2/0//120/"/>. As per their license agreement we have removed
-	all references to the project's trademark, however have included this
-	pointer to the original in case you want the plain text, or their XHTML
-	version. </p>
+          <email>ota@oucs.ox.ac.uk</email>
+        </distributor>
+        <idno type="ota">http://ota.ox.ac.uk/id/5730</idno>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed by the
+            University of Oxford under a Creative Commons Attribution-ShareAlike 3.0 Unported
+            License </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This text is a TEI version of a Project Gutenberg text originally located at <ptr
+            target="http://www.gutenberg.org/dirs/1/2/0//120/"/>. As per their license agreement we
+          have removed all references to the project's trademark, however have included this pointer
+          to the original in case you want the plain text, or their XHTML version. </p>
       </sourceDesc>
     </fileDesc>
     <profileDesc>
@@ -47,65 +45,60 @@
       </textClass>
       <textClass>
         <keywords scheme="http://www.ota.ox.ac.uk/processing">
-               <term type="class">text</term>
-               <term type="license">CC BY-SA</term>
+          <term type="class">text</term>
+          <term type="license">CC BY-SA</term>
         </keywords>
       </textClass>
     </profileDesc>
-      <revisionDesc>
-         <change when="2012-09-05T13:51:24.862+01:00"/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <front>
-	<div>
-	<head>TREASURE ISLAND</head>
-	<quote>
-            <p>To S.L.O., an American gentleman in accordance with whose classic taste
-the following narrative has been designed, it is now, in return for
-numerous delightful hours, and with the kindest wishes, dedicated by his
-affectionate friend, the author.</p>
-         </quote>
-
-
-	</div>
-      </front>
-<body>
-<div><head>PART ONE—The Old Buccaneer</head>
-<div type="div3"><head>The Old Sea-dog at the Admiral Benbow</head>
-  <p>This is a fake paragraph containing the string United States because
-  	we want to show off. </p>
-  <p>"Now, that bird," he would say, "is, maybe, two hundred years
-    old, Hawkins—they live forever mostly; and if anybody's seen more
-    wickedness, it must be the devil himself. She's sailed with England,
-    the great Cap'n England, the pirate. She's been at Madagascar, and at
-    Malabar, and Surinam, and Providence, and Portobello. She was at the
-    fishing up of the wrecked plate ships. It's there she learned 'Pieces
-    of eight,' and little wonder; three hundred and fifty thousand of 'em,
-    Hawkins! She was at the boarding of the viceroy of the Indies out of
-    Goa, she was; and to look at her you would think she was a babby. But
-    you smelt powder—didn't you, cap'n?"</p>
-  <p>"Stand by to go about," the parrot would scream.</p>
-  <p>"Ah, she's a handsome craft, she is," the cook would say, and give her
-    sugar from his pocket, and then the bird would peck at the bars and
-    swear straight on, passing belief for wickedness. "There," John would
-    add, "you can't touch pitch and not be mucked, lad. Here's this poor old
-    innocent bird o' mine swearing blue fire, and none the wiser, you may
-    lay to that. She would swear the same, in a manner of speaking, before
-    chaplain." And John would touch his forelock with a solemn way he had
-    that made me think he was the best of men.</p>
-  <p>In the meantime, the squire and Captain Smollett were still on pretty
-    distant terms with one another. The squire made no bones about the
-    matter; he despised the captain. The captain, on his part, never spoke
-    but when he was spoken to, and then sharp and short and dry, and not a
-    word wasted. He owned, when driven into a corner, that he seemed to have
-    been wrong about the crew, that some of them were as brisk as he wanted
-    to see and all had behaved fairly well. As for the ship, he had taken a
-    downright fancy to her. "She'll lie a point nearer the wind than a man
-    has a right to expect of his own married wife, sir. But," he would add,
-    "all I say is, we're not home again, and I don't like the cruise."</p>
-
-</div></div></body>
-   </text>
+    <revisionDesc>
+      <change when="2012-09-05T13:51:24.862+01:00"/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <div>
+        <head>TREASURE ISLAND</head>
+        <quote>
+          <p>To S.L.O., an American gentleman in accordance with whose classic taste the following
+            narrative has been designed, it is now, in return for numerous delightful hours, and
+            with the kindest wishes, dedicated by his affectionate friend, the author.</p>
+        </quote>
+      </div>
+    </front>
+    <body>
+      <div>
+        <head>PART ONE—The Old Buccaneer</head>
+        <div type="div3">
+          <head>The Old Sea-dog at the Admiral Benbow</head>
+          <p>This is a fake paragraph containing the string United States because we want to show
+            off. </p>
+          <p>"Now, that bird," he would say, "is, maybe, two hundred years old, Hawkins—they live
+            forever mostly; and if anybody's seen more wickedness, it must be the devil himself.
+            She's sailed with England, the great Cap'n England, the pirate. She's been at
+            Madagascar, and at Malabar, and Surinam, and Providence, and Portobello. She was at the
+            fishing up of the wrecked plate ships. It's there she learned 'Pieces of eight,' and
+            little wonder; three hundred and fifty thousand of 'em, Hawkins! She was at the boarding
+            of the viceroy of the Indies out of Goa, she was; and to look at her you would think she
+            was a babby. But you smelt powder—didn't you, cap'n?"</p>
+          <p>"Stand by to go about," the parrot would scream.</p>
+          <p>"Ah, she's a handsome craft, she is," the cook would say, and give her sugar from his
+            pocket, and then the bird would peck at the bars and swear straight on, passing belief
+            for wickedness. "There," John would add, "you can't touch pitch and not be mucked, lad.
+            Here's this poor old innocent bird o' mine swearing blue fire, and none the wiser, you
+            may lay to that. She would swear the same, in a manner of speaking, before chaplain."
+            And John would touch his forelock with a solemn way he had that made me think he was the
+            best of men.</p>
+          <p>In the meantime, the squire and Captain Smollett were still on pretty distant terms
+            with one another. The squire made no bones about the matter; he despised the captain.
+            The captain, on his part, never spoke but when he was spoken to, and then sharp and
+            short and dry, and not a word wasted. He owned, when driven into a corner, that he
+            seemed to have been wrong about the crew, that some of them were as brisk as he wanted
+            to see and all had behaved fairly well. As for the ship, he had taken a downright fancy
+            to her. "She'll lie a point nearer the wind than a man has a right to expect of his own
+            married wife, sir. But," he would add, "all I say is, we're not home again, and I don't
+            like the cruise."</p>
+        </div>
+      </div>
+    </body>
+  </text>
 </TEI>
-
