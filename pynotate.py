@@ -2,92 +2,59 @@
 
 import xml.dom.minidom as dom
 from xml.dom.minidom import parse, parseString
-import nltk
+from NLTK_helper import *
 
 file = "TreasureIsland-excerpt.xml"
 
-# NAMED ENTITIES FUNCTION
-def found_entities(paragraph=""):
-	paragraph = paragraph.replace(".", " ." )
-	paragraph = paragraph.replace("\n","")
-	raw_tokenized = nltk.word_tokenize(paragraph)
-	raw_text_withpostags = nltk.pos_tag(raw_tokenized)
-	raw_text_with_entities = nltk.ne_chunk(raw_text_withpostags)
-	return raw_text_with_entities
+class Annotator:
 
-def make_paragraph_tagged(tree):
-	#could be done in recoursive way
-	token_analyzed_list = {}
-	for i,node in enumerate(tree_with_entities):
-		#print(str(node) + " idx " + str(i))
-		if isinstance(node,tuple):
-			#print(str(node) + " is a tuple ")
-			token_analyzed_list[i] = node[0]
-		elif isinstance(node, nltk.tree.Tree):
-			tmp_str = str(node)
-			#print(tmp_str +" len: " +str(len(node)))
-			literal = make_literal(node)
-			if "PERSON" in tmp_str:
-				#testare quanti levelli ci sono
-				token_analyzed_list[i] = "<persName>"+literal+"</persName>"
-			#print("this from node: " + str(node[0][0]))
-			elif "GPE" in tmp_str:
-				#testare quanti livelli
-				literal = make_literal(node)
-				token_analyzed_list[i] = "<placeName>"+literal+"</placeName>"
-			else:
-				token_analyzed_list[i] = node[0][0]
+    def __init__(self, file):
+        self.file = file
+        self.xmlObj = dom.parse(self.file)
 
-	return token_analyzed_list
+    def printXML(self):
+    	self.file = file
+    	#xmlObj = self.parseXML()
+    	#print(type(self.xmlObj))
+    	print self.xmlObj.toxml("utf-8")
 
-def make_literal(node):
-	lenght = len(node)
-	# multi-words are not universal now. Thay are just for two words
-	if lenght == 2:
-		literal = str(node[0][0]) +" " + str(node[1][0])
-	else:
-		literal = node[0][0]
-	return literal
+    def remove_whites(self, string):
+    	#i may have to check for other string issues here
+    	#apostrophes etc. 
+    	self.string = string
+    	import re
+    	whites = re.compile(r"\s+")
+    	sanitized = whites.sub(" ", self.string)
+    	return sanitized
 
-def make_string_tagged(tokens_as_dic):
-	count = 0
-	list_of_word = []
-	while (count < len(tokens_as_dic)):
-		list_of_word.append(tokens_as_dic[count])
-		count+=1
-	return " ".join(list_of_word).replace(" .",".").replace(" !","!").replace(" ,", ",").replace(" \"", "\"").replace(" ;", ";").replace("`` ", '"').replace("'' ",'"')
+    def get_paragraphs (self):
+		#returns a list of paragraph dom objects and its parent nodes 
+		self.paragraphs = []
+		for text_node in self.xmlObj.getElementsByTagName("text"):
+			for paragraph in text_node.getElementsByTagName("p"):
+				parent = paragraph.parentNode
+				self.paragraphs.append([paragraph, parent])
+			return self.paragraphs
 
-# END OF NAMED ENTITIES 
+    def edit_paragraphs (self):
+		self.pars = self.get_paragraphs()
+		for each in self.pars:
+			orig_p = each[0]
+			parent = each[1]
+			p_text = self.remove_whites(orig_p.firstChild.nodeValue)
+
+			# here we are sending the paragraph text to be processed by NLTK
+
+			nltk_analyze = NLTK_Helper ()
+			analyzed_p = nltk_analyze.process(p_text)
+			xml_p = parseString("<p>"+analyzed_p.encode("utf-8")+"</p>").getElementsByTagName("p")[0]
+
+			parent.removeChild(orig_p)
+			parent.appendChild(xml_p)
 
 
-parsedObject = dom.parse(file)
-
-for text_node in parsedObject.getElementsByTagName("text"):
-	for paragraph in text_node.getElementsByTagName("p"):
-		#need to know parent in order for replacing paragraph later
-		parent = paragraph.parentNode
-			
-		#pure text that we are sending to NLPT
-		par_text = paragraph.firstChild.nodeValue
-
-		#this is where we call named entitiy recognition functions
-		tree_with_entities = found_entities(par_text)
-		dic_of_token = make_paragraph_tagged(tree_with_entities)
-		string_tagged = "<p>"+make_string_tagged(dic_of_token)+"</p>"
-
-		#here we have to turn the string into an xml node
-		parsed_par_as_doc = parseString(string_tagged.encode("utf-8"))
-		
-		#here we are removing the original paragraph
-		parent.removeChild(paragraph)
-		parsed_par = parsed_par_as_doc.getElementsByTagName("p")[0]
-
-		#here we are adding the funky new paragraph to the xml tree
-		parent.appendChild(parsed_par)
-
-	import re
-	linebreak = re.compile(r"\n+")
-	#print parsed_par.toxml("utf-8")
-	mystring = parsedObject.toprettyxml().encode("utf-8")
-	mystring = linebreak.sub("\n", mystring)
-	print mystring		
+#main body of the program
+annotate = Annotator(file)
+#annotate.printXML()
+annotate.edit_paragraphs()
+annotate.printXML()
