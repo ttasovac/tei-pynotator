@@ -7,6 +7,8 @@ Started as a group exercise at the Python crash course during the DARIAH Summer 
 
 Original team members: Roman Bleier, Angelo Mario Del Grosso, Silke Jagodzinski, Ludovica Marinucci, Sinai Rusinek, Toma Tasovac, Alex Tsitos
 
+This project is still in its very early stages and really no more than a proof of concept.
+
 Requirements
 ------------
 
