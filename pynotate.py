@@ -3,7 +3,7 @@
 import xml.dom.minidom as dom
 from xml.dom.minidom import parse, parseString
 import re
-from NLTK_helper import *
+from nltk_helper import *
 
 file = "TreasureIsland-excerpt.xml"
 
