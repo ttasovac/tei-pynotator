@@ -42,7 +42,7 @@ class NLTK_Helper:
 					literal = self.make_literal(node)
 					token_analyzed_list[i] = "<placeName>"+literal+"</placeName>"
 				else:
-					token_analyzed_list[i] = node[0][0]
+					token_analyzed_list[i] = literal
 
 		return token_analyzed_list
 
